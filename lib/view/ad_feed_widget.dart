@@ -1,0 +1,70 @@
+import 'dart:io';
+
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+
+/// Feed 信息流广告组件
+/// 建议在个性化模板的广告view中，宽度自动铺满整个view，期望模板尺寸的参数设置中，高度可以设置为0，高度会自适应，达到最佳的展示比例
+class AdFeedWidget extends StatefulWidget {
+  const AdFeedWidget({
+    super.key,
+    required this.posId,
+    this.show = true,
+    this.width = 375,
+    this.height = 128,
+  });
+  // 返回的广告 id，这里不是广告位id
+  final String posId;
+  // 是否显示广告
+  final bool show;
+  // 这里的宽高只是展示 widget 宽高，最终会自动适配实际广告的宽高，不可设置为 0
+  final double width, height;
+
+  @override
+  State<AdFeedWidget> createState() => _AdFeedWidgetState();
+}
+
+class _AdFeedWidgetState extends State<AdFeedWidget>
+    with AutomaticKeepAliveClientMixin {
+  // View 类型
+  final String viewType = 'flutter_qq_ads_feed';
+  // 创建参数
+  late Map<String, dynamic> creationParams;
+
+  @override
+  void initState() {
+    creationParams = <String, dynamic>{
+      "posId": widget.posId,
+    };
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
+    if (!widget.show || widget.width <= 0 || widget.height <= 0) {
+      return const SizedBox.shrink();
+    }
+    Widget view;
+    if (Platform.isIOS) {
+      view = UiKitView(
+        viewType: viewType,
+        creationParams: creationParams,
+        creationParamsCodec: const StandardMessageCodec(),
+      );
+    } else {
+      view = AndroidView(
+        viewType: viewType,
+        creationParams: creationParams,
+        creationParamsCodec: const StandardMessageCodec(),
+      );
+    }
+    return SizedBox.fromSize(
+      size: Size(widget.width, widget.height),
+      child: view,
+    );
+  }
+
+  @override
+  bool get wantKeepAlive => true;
+}
