@@ -1,5 +1,7 @@
 ## Unreleased
 
+- 升级 Android 优量汇 SDK 到 `com.qq.e.union:union:4.710.1580`
+- 升级 iOS 优量汇 SDK 到 `GDTMobSDK 4.16.10`；iOS 最低部署版本提升至 `11.0`
 - 新增 Android / iOS 自渲染图文广告能力：`loadNativeAd`、`clearNativeAd`、`AdNativeWidget`
 - 自渲染广告样式改为 `NativeAdStyle` 枚举，仅支持竖向、横向和纯图片 Banner 三种样式
 - 示例项目新增自渲染图文广告页面

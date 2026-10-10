@@ -2,8 +2,8 @@ PODS:
   - Flutter (1.0.0)
   - flutter_qq_ads (2.9.6):
     - Flutter
-    - GDTMobSDK (= 4.15.80)
-  - GDTMobSDK (4.15.80)
+    - GDTMobSDK (= 4.16.10)
+  - GDTMobSDK (4.16.10)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -20,9 +20,9 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_qq_ads/ios"
 
 SPEC CHECKSUMS:
-  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
-  flutter_qq_ads: 2bee6c1713dd338aad41f212be930ac991ad4fa0
-  GDTMobSDK: 55dae2ed62505cb2ace9634f8bd7936e6be99e12
+  Flutter: 71a624a5bc0c04062bf19101d501e466baf2fb47
+  flutter_qq_ads: 05b19ace7555014f2410eeccd1b44db54b78536e
+  GDTMobSDK: 7894f4b294cc086422482f4af4fcc544d7f79010
 
 PODFILE CHECKSUM: 53026eaf67b63baa2e316e457f9701dbdf33f41a
 

@@ -17,10 +17,10 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   # 依赖版本: https://github.com/CocoaPods/Specs/tree/master/Specs/a/a/a/GDTMobSDK
-  s.dependency 'GDTMobSDK','4.15.80'
+  s.dependency 'GDTMobSDK','4.16.10'
   s.static_framework = true
-  # 广点通的 SDK 最低支持 9.0 所以，这里设置 9.0
-  s.ios.deployment_target = '9.0'
+  # GDTMobSDK 4.16.10 requires iOS 11.0 or later.
+  s.ios.deployment_target = '11.0'
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
 end
